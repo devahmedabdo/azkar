@@ -26,7 +26,7 @@ export class DailyComponent {
       ++this.step;
     }
     
-    if (this.step == this.azkar.length) {
+    if (this.step == this.azkar.length+1) {
       alert('بارك الله فيك ورزقك  السداد');
       this.step = 1;
     }
