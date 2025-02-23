@@ -15,8 +15,8 @@ export class DailyComponent {
   step: number = +(localStorage.getItem('step') || 1);
   counter: number = +(localStorage.getItem('counter') || 1);
   increas() {
-    if (this.azkar[this.step-1].counter) {
-      if (this.counter == this.azkar[this.step-1].counter) {
+    if (this.azkar[this.step - 1].counter) {
+      if (this.counter == this.azkar[this.step - 1].counter) {
         ++this.step;
         this.counter = 1;
       } else {
@@ -25,25 +25,16 @@ export class DailyComponent {
     } else {
       ++this.step;
     }
-    this.save();
-    if(this.step == this.azkar.length){
+    
+    if (this.step == this.azkar.length) {
       alert('بارك الله فيك ورزقك  السداد');
-      this.step=1
+      this.step = 1;
     }
+    this.save();
   }
   decrease() {
-
-    //  if (this.azkar[this.step].counter) {
-    //    if (this.azkar[this.step].counter == this.counter) {
-    //      --this.step;
-    //      this.counter = 1;
-    //    } else {
-    //      ++this.counter;
-    //    }
-    //  } else {
-    //    --this.step;
-    //  }
---this.step;this.counter = 1;
+    --this.step;
+    this.counter = 1;
     this.save();
   }
   save() {

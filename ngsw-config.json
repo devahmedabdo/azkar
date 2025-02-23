@@ -26,5 +26,16 @@
         ]
       }
     }
+  ],
+  "dataGroups": [
+    {
+      "name": "background-sync",
+      "urls": ["/api/data"],
+      "cacheConfig": {
+        "strategy": "performance",
+        "maxSize": 100,
+        "maxAge": "1d" 
+      }
+    }
   ]
 }
