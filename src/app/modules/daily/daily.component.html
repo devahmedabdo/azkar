@@ -1,0 +1,29 @@
+<div class="container flex flex-col gap-4 min-h-screen">
+  <header class="flex gap-2 items-center justify-between">
+    <div class="flex gap-2 items-center">
+      <img src="icons/icon-72x72.png" alt="">
+      <span class="font-bold text-2xl">اذكارك</span>
+    </div>
+    <button class="btn !rounded-full aspect-square outline" (click)="step=1;save()">
+      <sa-icon path="icons/icons.svg#"  icon="home"></sa-icon>
+    </button>
+  </header>
+  <!-- <h1 class="text-center font-bold text-2xl">الاذكار اليوميه</h1> -->
+  <span class="block h-2 rounded-full after:rounded-full after:duration-500 bg-neutral-100 after:inset-0 relative after:absolute after:bg-cyan-500 after:w-[var(--width)]" [style]="'--width:'+(step/azkar.length * 100)+'px'"></span>
+  <div class="h-[70svh] pt-10 max-w-3xl relative text-center mx-auto text-xl font-medium font-hafs">
+    @for (item of azkar; track $index) {
+      @if(step == $index+1){
+        {{item.zikr}}
+        @if (item.counter) {
+          <span class="font-tag text-9xl font-bold absolute inset-0 flex justify-center items-center text-cyan-600 opacity-40">{{ item.counter - counter+1}}</span>
+        }
+      }
+    } 
+    <!-- azkar -->
+   </div>
+   <div class="flex gap-2 w-2/4 min-w-72 mx-auto">
+    <button (click)="decrease()" class="btn outline w-full" [disabled]="step==1">السابق</button>
+    <button (click)="increas()" [disabled]="step == azkar.length" class="btn w-full">التالي</button>
+   </div>
+
+</div>

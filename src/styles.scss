@@ -1,0 +1,36 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url("https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@100..900&family=Tajawal:wght@200;300;400;500;700;800;900&display=swap");
+@font-face {
+  font-family: "Hafs";
+  src: url("../public/fonts/original-hafs.woff");
+}
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+  body {
+    font-family: "Tajawal", serif;
+    padding: 0;
+    margin: 0;
+  }
+}
+@layer utilities {
+  .container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+  }
+}
+@layer components {
+  .btn {
+    @apply bg-cyan-600 duration-200 outline-0 font-medium text-white hover:bg-cyan-700 active:bg-cyan-800 px-3 py-2 rounded-lg border border-transparent ;
+    &.outline {
+      @apply bg-transparent text-cyan-600 hover:bg-cyan-100 active:bg-cyan-200 border-cyan-600;
+    }
+    &:disabled {
+      @apply bg-neutral-300 text-neutral-600 hover:bg-neutral-300 active:bg-neutral-300 border-neutral-300;
+    }
+  }
+}
